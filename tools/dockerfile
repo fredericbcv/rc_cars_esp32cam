@@ -1,0 +1,19 @@
+FROM ubuntu:24.04
+
+RUN apt-get update && apt-get install \
+	git \
+	cmake \
+	curl \
+	python3 python3.12-venv \
+	libusb-1.0-0 libusb-1.0-0-dev \
+	-y
+
+WORKDIR /tools
+
+RUN git clone --depth 1 --branch v5.3.1 https://github.com/espressif/esp-idf.git
+RUN ./esp-idf/install.sh
+RUN cd esp-idf && git submodule update --init --recursive
+
+RUN mkdir /project
+
+CMD cd /tools/esp-idf && . ./export.sh && cd /project && bash
