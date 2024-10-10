@@ -17,6 +17,11 @@ Update PS3 controller MAC
 * `./sixaxis_rs` to get MAC
 * `./sixaxis_rs <MAC>` to set MAC
 
+Clone PS3 submodule
+* `git submodule init` 
+* `git submodule update` 
+* `./component_patch.sh` 
+
 Build & flash esp32
 * Set ESP32 in programming mode (GPIO0 to GND)
 * Plug in FDTI
@@ -25,7 +30,7 @@ Build & flash esp32
 * `./docker_run.sh`
 * `idf.py build`
 * `idf.py -p /dev/ttyUSB0 flash`
-* Power off & release put ESP32 in boot mode (GPIO0 open)
+* Power off & put ESP32 in boot mode (GPIO0 open)
 
 ## Pictures
 
