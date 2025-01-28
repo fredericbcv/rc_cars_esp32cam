@@ -2,21 +2,35 @@ menu "RC Cars Configuration"
 
     orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
 
-    config CONFIG_GPIO_OUTPUT_15_SERVO
+    config GPIO_OUTPUT_2_LED
+        int "GPIO output pin 2"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 2
+        help
+            GPIO pin number to be used as GPIO_OUTPUT_IO_15.
+
+    config GPIO_OUTPUT_14_LED
+        int "GPIO output pin 14"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 14
+        help
+            GPIO pin number to be used as GPIO_OUTPUT_IO_14.
+
+    config GPIO_OUTPUT_15_SERVO
         int "GPIO output pin 15"
         range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
         default 15
         help
             GPIO pin number to be used as GPIO_OUTPUT_IO_15.
 
-    config CONFIG_GPIO_OUTPUT_12_MOTOR_EN1
+    config GPIO_OUTPUT_12_MOTOR_EN1
         int "GPIO output pin 12"
         range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
         default 12
         help
             GPIO pin number to be used as GPIO_OUTPUT_IO_12.
 
-    config CONFIG_GPIO_OUTPUT_13_MOTOR_EN2
+    config GPIO_OUTPUT_13_MOTOR_EN2
         int "GPIO output pin 13"
         range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
         default 13
